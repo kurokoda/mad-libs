@@ -4,7 +4,7 @@ import "./index.scss";
 import { COPY } from "../../../constants";
 import InputField from "./inputField";
 
-const App = (props) => {
+const InputView = (props) => {
   const { inputFields, onBlur } = props;
 
   const getCopy = (index) => {
@@ -15,6 +15,7 @@ const App = (props) => {
     inputFields.map((inputField, index) => (
       <InputField
         key={`input-field-${index}`}
+        id={inputField}
         label={getCopy(index)}
         onBlur={onBlur}
       />
@@ -35,6 +36,6 @@ const App = (props) => {
   );
 };
 
-App.propTypes = {};
+InputView.propTypes = {};
 
-export default App;
+export default InputView;
