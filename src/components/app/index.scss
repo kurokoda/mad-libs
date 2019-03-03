@@ -2,13 +2,16 @@
   background-color: #20489e;
   display: flex;
   height: 100vh;
+  min-height: 620px;
   width: 100%;
 }
 
 .madlibs__container {
   background-color: #20489e;
+  border-radius: 4px;
   display: flex;
   margin: 40px;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -17,11 +20,12 @@
   width : 100%;
 }
 
-.section {
+.madlibs__section {
   background-color: #fff;
+  padding: 40px;
   width: 100%
 }
 
-.section--gray {
+.madlibs__section--gray {
   background-color: #f3f5f9;
 }
