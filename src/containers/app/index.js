@@ -3,8 +3,8 @@ import { actions } from "../../reducers/madlibs";
 
 import App from "../../components/app";
 
-function mapStateToProps({madlibs}) {
-  return {madlibs};
+function mapStateToProps(state) {
+  return state;
 }
 
 function mapDispatchToProps(dispatch) {
