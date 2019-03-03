@@ -1,0 +1,27 @@
+.application__container {
+  background-color: #20489e;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.madlibs__container {
+  background-color: #20489e;
+  display: flex;
+  margin: 40px;
+  width: 100%;
+}
+
+.madlibs__content {
+  display: flex;
+  width : 100%;
+}
+
+.section {
+  background-color: #fff;
+  width: 100%
+}
+
+.section--gray {
+  background-color: #f3f5f9;
+}

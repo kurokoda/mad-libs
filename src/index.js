@@ -4,15 +4,15 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { reducer } from "./reducers/madlibs";
 
-import Container from "./containers/app";
+import Application from "./containers/app";
 
-require("./index.scss");
+import "./index.scss";
 
 const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Container />
+    <Application />
   </Provider>,
   document.getElementById("root"),
 );
