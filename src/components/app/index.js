@@ -5,7 +5,7 @@ import InputView from "../views/input";
 
 const App = (props) => {
   const { fieldOrder } = props;
-  const inputFields = fieldOrder;
+  const keys = fieldOrder;
 
   const onBlur = () => {
 
@@ -13,7 +13,7 @@ const App = (props) => {
 
   return (
     <div className="application__container">
-      <InputView inputFields={inputFields} onBlur={onBlur}/>
+      <InputView keys={keys} onBlur={onBlur}/>
     </div>
   );
 };

@@ -5,17 +5,17 @@ import { COPY } from "../../../constants";
 import InputField from "./inputField";
 
 const InputView = (props) => {
-  const { inputFields, onBlur } = props;
+  const { keys, onBlur } = props;
 
   const getCopy = (index) => {
-    return COPY[inputFields[index]];
+    return COPY[keys[index]];
   };
 
   const InputFields = () =>
-    inputFields.map((inputField, index) => (
+      keys.map((key, index) => (
       <InputField
-        key={`input-field-${index}`}
-        id={inputField}
+        key={`input-field-${key}`}
+        id={key}
         label={getCopy(index)}
         onBlur={onBlur}
       />
