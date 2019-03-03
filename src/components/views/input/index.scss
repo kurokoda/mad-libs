@@ -1,0 +1,30 @@
+.madlibs__container {
+  background-color: #20489e;
+  border-radius: 4px;
+  display: flex;
+  margin: 40px;
+  min-height: 620px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.madlibs__content {
+  display: flex;
+  width : 100%;
+}
+
+.madlibs__section {
+  background-color: #fff;
+  padding: 40px;
+  width: 100%
+}
+
+.madlibs__section--gray {
+  background-color: #f3f5f9;
+}
+
+.madlibs__section-label {
+  color: #666;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
