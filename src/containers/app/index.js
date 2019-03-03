@@ -9,7 +9,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    incrementMadlibCounter: () => dispatch(actions.increment()),
+    updateFieldTemplate: (payload) => dispatch(actions.updateFieldTemplate(payload)),
   };
 }
 

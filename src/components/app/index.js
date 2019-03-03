@@ -4,11 +4,13 @@ import "./index.scss";
 import InputView from "../views/input";
 
 const App = (props) => {
-  const { fieldOrder } = props;
+  const { fieldOrder, updateFieldTemplate } = props;
   const fields = fieldOrder;
 
   const onBlur = (event) => {
-    console.log(event.target.dataset.field, event.target.value )
+    const field = event.target.dataset.field;
+    const value = event.target.value;
+    updateFieldTemplate({field, value})
   }
 
   return (

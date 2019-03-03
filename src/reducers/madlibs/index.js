@@ -4,6 +4,7 @@ import { FIELD_NAMES } from "../../constants";
 // ----------------------------------------------------------------------------
 
 export const INCREMENT_COUNTER = "MADLIBS.INCREMENT_COUNTER";
+export const UPDATE_FIELD_TEMPLATE = "MADLIBS.UPDATE_FIELD_TEMPLATE";
 
 // Initial state
 // ----------------------------------------------------------------------------
@@ -17,6 +18,15 @@ export const INITIAL_STATE = {
     FIELD_NAMES.messageIf,
     FIELD_NAMES.bar,
   ],
+
+  fieldValues: {
+    [FIELD_NAMES.hometown]: {input:'', template: ''},
+    [FIELD_NAMES.favoriteFood]: {input:'', template: ''},
+    [FIELD_NAMES.loveToDo]: {input:'', template: ''},
+    [FIELD_NAMES.music]: {input:'', template: ''},
+    [FIELD_NAMES.messageIf]: {input:'', template: ''},
+    [FIELD_NAMES.bar]: {input:'', template: ''},
+  },
 
   essayText: "",
 
@@ -35,6 +45,14 @@ export function reducer(state = INITIAL_STATE, action) {
       };
     }
 
+    case UPDATE_FIELD_TEMPLATE: {
+      console.log(action)
+      return {
+        ...state,
+        counter: state.counter + 1,
+      };
+    }
+
     default:
       return state;
   }
@@ -47,4 +65,8 @@ export const actions = {
   increment() {
     return { type: INCREMENT_COUNTER };
   },
+
+  updateFieldTemplate(payload) {
+    return { type: UPDATE_FIELD_TEMPLATE, payload };
+  }
 };
