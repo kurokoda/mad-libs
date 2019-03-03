@@ -5,15 +5,15 @@ import InputView from "../views/input";
 
 const App = (props) => {
   const { fieldOrder } = props;
-  const keys = fieldOrder;
+  const fields = fieldOrder;
 
-  const onBlur = () => {
-
+  const onBlur = (event) => {
+    console.log(event.target.dataset.field, event.target.value )
   }
 
   return (
     <div className="application__container">
-      <InputView keys={keys} onBlur={onBlur}/>
+      <InputView fields={fields} onBlur={onBlur}/>
     </div>
   );
 };
