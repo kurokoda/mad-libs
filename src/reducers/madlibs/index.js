@@ -1,4 +1,4 @@
-import { FIELD_NAMES } from "./constants";
+import { FIELD_NAMES } from "../../constants";
 
 // Action types
 // ----------------------------------------------------------------------------

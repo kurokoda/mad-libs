@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import { actions } from "./madlibs";
+import { actions } from "../../reducers/madlibs";
 
-import App from "./components/App";
+import App from "../../components/app";
 
 function mapStateToProps(state) {
   return state;
