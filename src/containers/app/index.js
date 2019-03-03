@@ -3,12 +3,14 @@ import { actions } from "../../reducers/madlibs";
 
 import App from "../../components/app";
 
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps({madlibs}) {
+  return {madlibs};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    incrementMadlibCounter: () => dispatch(actions.increment()),
+  };
 }
 
 export default connect(
