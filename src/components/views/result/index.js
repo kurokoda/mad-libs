@@ -11,7 +11,10 @@ const ResultView = (props) => {
           <div className="result-section">
             <h3 className="section-label">Your Essay Text</h3>
             <div className="result-text-container">
-              <div className="result-text" dangerouslySetInnerHTML={{__html:getResults()}}/>
+              <div
+                className="result-text"
+                dangerouslySetInnerHTML={{ __html: getResults() }}
+              />
             </div>
             <button
               className="button--nav"

@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify'
+import DOMPurify from "dompurify";
 import PropTypes from "prop-types";
 import React from "react";
 import InputView from "../views/input";
@@ -23,7 +23,9 @@ const App = (props) => {
   };
 
   const getResults = () => {
-    return DOMPurify.sanitize(fields.map((field) => fieldResults[field]).join(" "));
+    return DOMPurify.sanitize(
+      fields.map((field) => fieldResults[field]).join(" "),
+    );
   };
 
   const getTemplate = (field) => {
@@ -33,7 +35,8 @@ const App = (props) => {
 
   const getTemplateString = (field, value) => {
     const template = getTemplate(field);
-    value = template.indexOf("$answer") === 0 ? getCapitalizedString(value) : value;
+    value =
+      template.indexOf("$answer") === 0 ? getCapitalizedString(value) : value;
     return template.replace("$answer", `<strong>${value}</strong>`);
   };
 

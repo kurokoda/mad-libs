@@ -32,7 +32,10 @@ const InputView = (props) => {
         </div>
         <div className="section">
           <h3 className="section-label">Your Essay Test</h3>
-          <div className="result-text" dangerouslySetInnerHTML={{__html:getResults()}}/>
+          <div
+            className="result-text"
+            dangerouslySetInnerHTML={{ __html: getResults() }}
+          />
           {allFieldsComplete && (
             <button
               className="button--nav"
