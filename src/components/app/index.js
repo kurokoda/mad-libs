@@ -5,7 +5,7 @@ import InputView from "../views/input";
 import { getTextTemplate } from "../../constants";
 
 const App = (props) => {
-  const { fieldOrder, fieldResults, updateFieldTemplate } = props;
+  const { allFieldsComplete, fieldOrder, fieldResults, updateFieldTemplate } = props;
   const fields = fieldOrder;
 
   const capitalizeString = (value) => {
@@ -29,7 +29,7 @@ const App = (props) => {
 
   return (
     <div className="application__container">
-      <InputView fields={fields} fieldResults={fieldResults} onBlur={onBlur} />
+      <InputView allFieldsComplete={allFieldsComplete} fields={fields} fieldResults={fieldResults} onBlur={onBlur} />
     </div>
   );
 };
