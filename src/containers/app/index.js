@@ -3,8 +3,18 @@ import { actions } from "../../reducers/app";
 
 import App from "../../components/app";
 
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps({allFieldsComplete,
+  currentView,
+  fieldOrder,
+  fieldResults,
+  updateFieldTemplate,
+  updateCurrentView}) {
+  return {allFieldsComplete,
+    currentView,
+    fieldOrder,
+    fieldResults,
+    updateFieldTemplate,
+    updateCurrentView};
 }
 
 function mapDispatchToProps(dispatch) {
