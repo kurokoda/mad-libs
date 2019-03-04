@@ -9,7 +9,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateFieldTemplate: (payload) => dispatch(actions.updateFieldTemplate(payload)),
+    updateFieldTemplate: (payload) =>
+      dispatch(actions.updateFieldTemplate(payload)),
   };
 }
 

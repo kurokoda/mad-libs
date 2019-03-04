@@ -19,18 +19,16 @@ export const INITIAL_STATE = {
     FIELD_NAMES.bar,
   ],
 
-  fieldValues: {
-    [FIELD_NAMES.hometown]: { input: "", result: "" },
-    [FIELD_NAMES.favoriteFood]: { input: "", result: "" },
-    [FIELD_NAMES.loveToDo]: { input: "", result: "" },
-    [FIELD_NAMES.music]: { input: "", result: "" },
-    [FIELD_NAMES.messageIf]: { input: "", result: "" },
-    [FIELD_NAMES.bar]: { input: "", result: "" },
+  fieldResults: {
+    [FIELD_NAMES.hometown]: null,
+    [FIELD_NAMES.favoriteFood]: null,
+    [FIELD_NAMES.loveToDo]: null,
+    [FIELD_NAMES.music]: null,
+    [FIELD_NAMES.messageIf]: null,
+    [FIELD_NAMES.bar]: null,
   },
 
-  essayText: "",
-
-  counter: 1,
+  allFieldsComplete: false,
 };
 
 // Reducer
@@ -45,13 +43,14 @@ export function reducer(state = INITIAL_STATE, action) {
       };
 
     case UPDATE_FIELD_TEMPLATE:
-      const fieldValues = Object.assign({}, state.fieldValues);
-      fieldValues[action.payload.field].input = action.payload.value;
-      fieldValues[action.payload.field].result = action.payload.result;
+      const fieldResults = Object.assign({}, state.fieldResults);
+      fieldResults[action.payload.field] = action.payload.result;
+      const allFieldsComplete = Object.values(fieldResults).indexOf(null) === -1;
       return {
         ...state,
-        fieldValues,
-      }
+        allFieldsComplete,
+        fieldResults
+      };
 
     default:
       return state;

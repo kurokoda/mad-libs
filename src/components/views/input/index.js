@@ -1,40 +1,38 @@
 import React from "react";
-import PropTypes from "prop-types";
-import "./index.scss";
 import { COPY } from "../../../constants";
+import "./index.scss";
 import InputField from "./inputField";
 
 const InputView = (props) => {
-  const { fields, fieldValues, onBlur } = props;
+  const { fields, fieldResults, onBlur } = props;
 
   const getCopy = (index) => {
     return COPY[fields[index]];
   };
 
-  const getValue = (field) => {
-    return fieldValues[field].input;
+  const getResults = () => {
+    return fields
+      .map((field) => fieldResults[field])
+      .join(" ");
   };
-
-  const InputFields = () =>
-      fields.map((field, index) => (
-      <InputField
-        key={`input-field-${field}`}
-        field={field}
-        label={getCopy(index)}
-        onBlur={onBlur}
-        value={getValue(field)}
-      />
-    ));
 
   return (
     <div className="madlibs__container">
       <div className="madlibs__content">
         <div className="madlibs__section madlibs__section--gray">
           <h3 className="madlibs__section-label">About Me</h3>
-          <InputFields />
+          {fields.map((field, index) => (
+            <InputField
+              key={`input-field-${field}`}
+              field={field}
+              label={getCopy(index)}
+              onBlur={onBlur}
+            />
+          ))}
         </div>
         <div className="madlibs__section">
           <h3 className="madlibs__section-label">Your Essay Test</h3>
+          {getResults()}
         </div>
       </div>
     </div>

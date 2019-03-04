@@ -4,41 +4,35 @@ import "./index.scss";
 
 class InputField extends Component {
   state = {
-    inputTextValue: ""
-  }
+    value: "",
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     const { value } = this.props;
-    this.setState({inputTextValue: value})
+    this.setState({ inputTextValue: value });
   }
 
   render() {
     const { field, label, onBlur } = this.props;
-    const { inputTextValue } = this.state;
-    console.log(inputTextValue)
+    const { value } = this.state;
+
     return (
       <div className="input-field__container">
         <p className="input-field__label">{label}</p>
         <input
           className="input-field__input"
           data-field={field}
-          onBlur={this.onBlur}
+          onBlur={onBlur}
           onChange={this.onChange}
-          value={inputTextValue}
+          value={value}
         />
       </div>
     );
   }
 
-  onBlur = (event) => {
-    const inputTextValue = event.target.value;
-    this.setState({inputTextValue})
-  }
-
   onChange = (event) => {
-    const inputTextValue = event.target.value;
-    this.setState({inputTextValue})
-  }
+    this.setState({ value: event.target.value });
+  };
 }
 
 InputField.propTypes = {};
