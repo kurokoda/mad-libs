@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class InputField extends Component {
+class TextInput extends Component {
   state = {
     value: "",
   };
-
-  componentDidMount() {
-    const { value } = this.props;
-    this.setState({ inputTextValue: value });
-  }
 
   render() {
     const { field, label, onBlur } = this.props;
@@ -34,11 +29,10 @@ class InputField extends Component {
   };
 }
 
-InputField.propTypes = {
+TextInput.propTypes = {
   field: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onBlur: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
 };
 
-export default InputField;
+export default TextInput;

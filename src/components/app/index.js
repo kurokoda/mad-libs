@@ -18,7 +18,7 @@ const App = (props) => {
   } = props;
   const fields = fieldOrder;
 
-  const capitalizeString = (value) => {
+  const getCapitalizedString = (value) => {
     return value.substring(0, 1).toUpperCase() + value.substring(1);
   };
 
@@ -33,7 +33,7 @@ const App = (props) => {
 
   const getTemplateString = (field, value) => {
     const template = getTemplate(field);
-    value = template.indexOf("$answer") === 0 ? capitalizeString(value) : value;
+    value = template.indexOf("$answer") === 0 ? getCapitalizedString(value) : value;
     return template.replace("$answer", `<strong>${value}</strong>`);
   };
 

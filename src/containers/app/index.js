@@ -18,7 +18,6 @@ function mapStateToProps({
     fieldOrder,
     fieldResults,
     resetApplication,
-    resetApplication,
     updateFieldTemplate,
     updateCurrentView,
   };

@@ -1,13 +1,12 @@
 import React from "react";
 import { COPY } from "../../../constants";
-import InputField from "./inputField";
+import TextInput from "./textInput";
 import PropTypes from "prop-types";
 
 const InputView = (props) => {
   const {
     allFieldsComplete,
     fields,
-    fieldResults,
     getResults,
     onBlur,
     onButtonClick,
@@ -23,7 +22,7 @@ const InputView = (props) => {
         <div className="section section--gray">
           <h3 className="section-label">About Me</h3>
           {fields.map((field, index) => (
-            <InputField
+            <TextInput
               key={`input-field-${field}`}
               field={field}
               label={getCopy(index)}
@@ -52,7 +51,7 @@ const InputView = (props) => {
 InputView.propTypes = {
   allFieldsComplete: PropTypes.bool.isRequired,
   fields: PropTypes.array.isRequired,
-  fieldResults: PropTypes.shape({}).isRequired,
+  getResults: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };

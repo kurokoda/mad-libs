@@ -28,8 +28,7 @@ const ResultView = (props) => {
 };
 
 ResultView.propTypes = {
-  fields: PropTypes.array.isRequired,
-  fieldResults: PropTypes.shape({}).isRequired,
+  getResults: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
 
