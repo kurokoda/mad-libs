@@ -15,18 +15,24 @@ class InputField extends Component {
   render() {
     const { field, label, onBlur } = this.props;
     const { inputTextValue } = this.state;
+    console.log(inputTextValue)
     return (
       <div className="input-field__container">
         <p className="input-field__label">{label}</p>
         <input
           className="input-field__input"
           data-field={field}
-          onBlur={onBlur}
+          onBlur={this.onBlur}
           onChange={this.onChange}
           value={inputTextValue}
         />
       </div>
     );
+  }
+
+  onBlur = (event) => {
+    const inputTextValue = event.target.value;
+    this.setState({inputTextValue})
   }
 
   onChange = (event) => {

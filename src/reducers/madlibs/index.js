@@ -20,12 +20,12 @@ export const INITIAL_STATE = {
   ],
 
   fieldValues: {
-    [FIELD_NAMES.hometown]: {input:'', result: ''},
-    [FIELD_NAMES.favoriteFood]: {input:'', result: ''},
-    [FIELD_NAMES.loveToDo]: {input:'', result: ''},
-    [FIELD_NAMES.music]: {input:'', result: ''},
-    [FIELD_NAMES.messageIf]: {input:'', result: ''},
-    [FIELD_NAMES.bar]: {input:'', result: ''},
+    [FIELD_NAMES.hometown]: { input: "", result: "" },
+    [FIELD_NAMES.favoriteFood]: { input: "", result: "" },
+    [FIELD_NAMES.loveToDo]: { input: "", result: "" },
+    [FIELD_NAMES.music]: { input: "", result: "" },
+    [FIELD_NAMES.messageIf]: { input: "", result: "" },
+    [FIELD_NAMES.bar]: { input: "", result: "" },
   },
 
   essayText: "",
@@ -44,15 +44,14 @@ export function reducer(state = INITIAL_STATE, action) {
         counter: state.counter + 1,
       };
 
-
     case UPDATE_FIELD_TEMPLATE:
-      // I don't like this behavior but I'm working in a different data structure than I'd set up.
-      // It works for this example, but 10/10 would refactor.
-      const newState  = Object.assign({}, state);
-      newState.fieldValues[action.payload.field].input = action.payload.value;
-      newState.fieldValues[action.payload.field].result = action.payload.result;
-      return newState;
-
+      const fieldValues = Object.assign({}, state.fieldValues);
+      fieldValues[action.payload.field].input = action.payload.value;
+      fieldValues[action.payload.field].result = action.payload.result;
+      return {
+        ...state,
+        fieldValues,
+      }
 
     default:
       return state;
@@ -69,5 +68,5 @@ export const actions = {
 
   updateFieldTemplate(payload) {
     return { type: UPDATE_FIELD_TEMPLATE, payload };
-  }
+  },
 };
