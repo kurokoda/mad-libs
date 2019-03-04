@@ -8,16 +8,13 @@ const InputView = (props) => {
     allFieldsComplete,
     fields,
     fieldResults,
+    getResults,
     onBlur,
     onButtonClick,
   } = props;
 
   const getCopy = (index) => {
     return COPY[fields[index]];
-  };
-
-  const getResults = () => {
-    return fields.map((field) => fieldResults[field]).join(" ");
   };
 
   return (
@@ -36,7 +33,7 @@ const InputView = (props) => {
         </div>
         <div className="section">
           <h3 className="section-label">Your Essay Test</h3>
-          <div className="result-text">{getResults()}</div>
+          <div className="result-text" dangerouslySetInnerHTML={{__html:getResults()}}/>
           {allFieldsComplete && (
             <button
               className="button--nav"

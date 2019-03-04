@@ -1,5 +1,6 @@
-import React from "react";
+import DOMPurify from 'dompurify'
 import PropTypes from "prop-types";
+import React from "react";
 import InputView from "../views/input";
 import ResultView from "../views/result";
 
@@ -21,6 +22,10 @@ const App = (props) => {
     return value.substring(0, 1).toUpperCase() + value.substring(1);
   };
 
+  const getResults = () => {
+    return DOMPurify.sanitize(fields.map((field) => fieldResults[field]).join(" "));
+  };
+
   const getTemplate = (field) => {
     const templateList = getTextTemplate(field);
     return templateList[Math.floor(Math.random() * templateList.length)];
@@ -29,7 +34,7 @@ const App = (props) => {
   const getTemplateString = (field, value) => {
     const template = getTemplate(field);
     value = template.indexOf("$answer") === 0 ? capitalizeString(value) : value;
-    return template.replace("$answer", value);
+    return template.replace("$answer", `<strong>${value}</strong>`);
   };
 
   const isInputView = currentView === "input";
@@ -61,6 +66,7 @@ const App = (props) => {
           allFieldsComplete={allFieldsComplete}
           fields={fields}
           fieldResults={fieldResults}
+          getResults={getResults}
           onBlur={onBlur}
           onButtonClick={onInputNavButtonClick}
         />
@@ -69,6 +75,7 @@ const App = (props) => {
         <ResultView
           fields={fields}
           fieldResults={fieldResults}
+          getResults={getResults}
           onButtonClick={onResultNavButtonClick}
         />
       )}

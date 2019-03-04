@@ -2,11 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ResultView = (props) => {
-  const { fields, fieldResults, onButtonClick } = props;
-
-  const getResults = () => {
-    return fields.map((field) => fieldResults[field]).join(" ");
-  };
+  const { getResults, onButtonClick } = props;
 
   return (
     <div className="container">
@@ -15,7 +11,7 @@ const ResultView = (props) => {
           <div className="result-section">
             <h3 className="section-label">Your Essay Text</h3>
             <div className="result-text-container">
-              <div className="result-text">{getResults()}</div>
+              <div className="result-text" dangerouslySetInnerHTML={{__html:getResults()}}/>
             </div>
             <button
               className="button--nav"
