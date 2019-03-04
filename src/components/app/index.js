@@ -75,7 +75,7 @@ App.propTypes = {
   fieldOrder: PropTypes.array.isRequired,
   fieldResults: PropTypes.shape({}).isRequired,
   updateFieldTemplate: PropTypes.func.isRequired,
-  updateCurrentView: PropTypes.func.isRequired
+  updateCurrentView: PropTypes.func.isRequired,
 };
 
 export default App;

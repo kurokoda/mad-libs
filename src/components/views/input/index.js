@@ -57,7 +57,7 @@ InputView.propTypes = {
   fields: PropTypes.array.isRequired,
   fieldResults: PropTypes.shape({}).isRequired,
   onBlur: PropTypes.func.isRequired,
-  onButtonClick: PropTypes.func.isRequired
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default InputView;

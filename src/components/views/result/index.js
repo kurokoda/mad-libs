@@ -31,7 +31,7 @@ const ResultView = (props) => {
 };
 
 ResultView.propTypes = {
-  onButtonClick: PropTypes.func.isRequired
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default ResultView;
