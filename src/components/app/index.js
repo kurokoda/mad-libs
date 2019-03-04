@@ -5,14 +5,19 @@ import InputView from "../views/input";
 import { getTextTemplate } from "../../constants";
 
 const App = (props) => {
-  const { allFieldsComplete, fieldOrder, fieldResults, updateFieldTemplate } = props;
+  const {
+    allFieldsComplete,
+    fieldOrder,
+    fieldResults,
+    updateFieldTemplate,
+  } = props;
   const fields = fieldOrder;
 
   const capitalizeString = (value) => {
     return value.substring(0, 1).toUpperCase() + value.substring(1);
   };
 
-  const getString = (field, value) => {
+  const getTemplateString = (field, value) => {
     const templateList = getTextTemplate(field);
     const template =
       templateList[Math.floor(Math.random() * templateList.length)];
@@ -23,13 +28,18 @@ const App = (props) => {
   const onBlur = (event) => {
     const field = event.target.dataset.field;
     const value = event.target.value;
-    const result = value === "" ? null : getString(field, value);
+    const result = value === "" ? null : getTemplateString(field, value);
     updateFieldTemplate({ field, result });
   };
 
   return (
     <div className="application__container">
-      <InputView allFieldsComplete={allFieldsComplete} fields={fields} fieldResults={fieldResults} onBlur={onBlur} />
+      <InputView
+        allFieldsComplete={allFieldsComplete}
+        fields={fields}
+        fieldResults={fieldResults}
+        onBlur={onBlur}
+      />
     </div>
   );
 };

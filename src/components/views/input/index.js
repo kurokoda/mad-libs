@@ -4,16 +4,14 @@ import "./index.scss";
 import InputField from "./inputField";
 
 const InputView = (props) => {
-  const { fields, fieldResults, onBlur } = props;
+  const { allFieldsComplete, fields, fieldResults, onBlur } = props;
 
   const getCopy = (index) => {
     return COPY[fields[index]];
   };
 
   const getResults = () => {
-    return fields
-      .map((field) => fieldResults[field])
-      .join(" ");
+    return fields.map((field) => fieldResults[field]).join(" ");
   };
 
   return (
@@ -29,6 +27,7 @@ const InputView = (props) => {
               onBlur={onBlur}
             />
           ))}
+          {allFieldsComplete && <button>BUTTON</button>}
         </div>
         <div className="madlibs__section">
           <h3 className="madlibs__section-label">Your Essay Test</h3>

@@ -45,11 +45,12 @@ export function reducer(state = INITIAL_STATE, action) {
     case UPDATE_FIELD_TEMPLATE:
       const fieldResults = Object.assign({}, state.fieldResults);
       fieldResults[action.payload.field] = action.payload.result;
-      const allFieldsComplete = Object.values(fieldResults).indexOf(null) === -1;
+      const allFieldsComplete =
+        Object.values(fieldResults).indexOf(null) === -1;
       return {
         ...state,
         allFieldsComplete,
-        fieldResults
+        fieldResults,
       };
 
     default:
