@@ -15,7 +15,7 @@ const ResultView = (props) => {
           <div className="result-section">
             <h3 className="section-label">Your Essay Text</h3>
             <div className="result-text-container">
-            <div className="result-text">{getResults()}</div>
+              <div className="result-text">{getResults()}</div>
             </div>
             <button
               className="button--nav"
