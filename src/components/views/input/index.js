@@ -31,7 +31,12 @@ const InputView = (props) => {
         </div>
         <div className="madlibs__section">
           <h3 className="madlibs__section-label">Your Essay Test</h3>
+          <div className="madlibs__results">
           {getResults()}
+          </div>
+          {allFieldsComplete && (
+            <button className="madlibs__button">Edit</button>
+          )}
         </div>
       </div>
     </div>
