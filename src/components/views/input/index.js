@@ -1,6 +1,5 @@
 import React from "react";
 import { COPY } from "../../../constants";
-import "./index.scss";
 import InputField from "./inputField";
 
 const InputView = (props) => {
@@ -15,10 +14,10 @@ const InputView = (props) => {
   };
 
   return (
-    <div className="madlibs__container">
-      <div className="madlibs__content">
-        <div className="madlibs__section madlibs__section--gray">
-          <h3 className="madlibs__section-label">About Me</h3>
+    <div className="container">
+      <div className="content">
+        <div className="section section--gray">
+          <h3 className="section-label">About Me</h3>
           {fields.map((field, index) => (
             <InputField
               key={`input-field-${field}`}
@@ -28,13 +27,13 @@ const InputView = (props) => {
             />
           ))}
         </div>
-        <div className="madlibs__section">
-          <h3 className="madlibs__section-label">Your Essay Test</h3>
-          <div className="madlibs__results">
+        <div className="section">
+          <h3 className="section-label">Your Essay Test</h3>
+          <div className="results">
           {getResults()}
           </div>
           {allFieldsComplete && (
-              <button className="madlibs__button" data-target-view="result" onClick={onButtonClick}>Edit</button>
+              <button className="nav-button" data-target-view="result" onClick={onButtonClick}>Edit</button>
           )}
         </div>
       </div>

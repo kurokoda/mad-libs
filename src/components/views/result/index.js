@@ -1,19 +1,18 @@
 import React from "react";
-import "./index.scss";
 
 const ResultView = (props) => {
   const { onButtonClick } = props;
 
   return (
-    <div className="madlibs__container">
-      <div className="madlibs__content">
-        <div className="madlibs__section madlibs__section--centered madlibs__section--gray">
-          <div className="madlibs__result-section">
-            <h3 className="madlibs__section-label">About Me</h3>
-            <div className="madlibs__result-text">
+    <div className="container">
+      <div className="content">
+        <div className="section section--centered section--gray">
+          <div className="result-section">
+            <h3 className="section-label">About Me</h3>
+            <div className="result-text">
               Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
             </div>
-            <button className="madlibs__button" data-target-view="input" onClick={onButtonClick}>Edit</button>
+            <button className="nav-button" data-target-view="input" onClick={onButtonClick}>Edit</button>
           </div>
         </div>
       </div>

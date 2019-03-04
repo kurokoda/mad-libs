@@ -19,3 +19,102 @@ a {
 button {
   color: red;
 }
+
+.application {
+  background-color: #20489e;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  background-color: #20489e;
+  border-radius: 4px;
+  display: flex;
+  margin: 40px;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.input-field__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.input-field__input {
+  border: none;
+  border-radius: 4px;
+  color: #999;
+  font-size: 18px;
+  height: 30px;
+  outline: none;
+  padding: 10px;
+  width: auto;
+}
+
+.input-field__label {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.nav-button {
+  background-color: #63d791;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  height: 50px;
+  width: 140px
+}
+
+.result-section {
+  max-width : 480px;
+  min-width : 399px;
+  width: 100%
+}
+
+.result-text {
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 20px;
+  min-height: 180px;
+  width: 100%
+}
+
+.results {
+  color: #999;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  width: 100%;
+}
+
+.section--centered {
+  align-items: center;
+}
+
+.section--gray {
+  background-color: #f3f5f9;
+}
+
+.section-label {
+  color: #666;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+
