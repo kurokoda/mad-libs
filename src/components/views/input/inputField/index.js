@@ -34,6 +34,11 @@ class InputField extends Component {
   };
 }
 
-InputField.propTypes = {};
+InputField.propTypes = {
+  field: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
 export default InputField;
