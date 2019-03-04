@@ -20,12 +20,12 @@ export const INITIAL_STATE = {
   ],
 
   fieldValues: {
-    [FIELD_NAMES.hometown]: {input:'', template: ''},
-    [FIELD_NAMES.favoriteFood]: {input:'', template: ''},
-    [FIELD_NAMES.loveToDo]: {input:'', template: ''},
-    [FIELD_NAMES.music]: {input:'', template: ''},
-    [FIELD_NAMES.messageIf]: {input:'', template: ''},
-    [FIELD_NAMES.bar]: {input:'', template: ''},
+    [FIELD_NAMES.hometown]: {input:'', result: ''},
+    [FIELD_NAMES.favoriteFood]: {input:'', result: ''},
+    [FIELD_NAMES.loveToDo]: {input:'', result: ''},
+    [FIELD_NAMES.music]: {input:'', result: ''},
+    [FIELD_NAMES.messageIf]: {input:'', result: ''},
+    [FIELD_NAMES.bar]: {input:'', result: ''},
   },
 
   essayText: "",
@@ -38,20 +38,21 @@ export const INITIAL_STATE = {
 
 export function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case INCREMENT_COUNTER: {
+    case INCREMENT_COUNTER:
       return {
         ...state,
         counter: state.counter + 1,
       };
-    }
 
-    case UPDATE_FIELD_TEMPLATE: {
-      console.log(action)
-      return {
-        ...state,
-        counter: state.counter + 1,
-      };
-    }
+
+    case UPDATE_FIELD_TEMPLATE:
+      // I don't like this behavior but I'm working in a different data structure than I'd set up.
+      // It works for this example, but 10/10 would refactor.
+      const newState  = Object.assign({}, state);
+      newState.fieldValues[action.payload.field].input = action.payload.value;
+      newState.fieldValues[action.payload.field].result = action.payload.result;
+      return newState;
+
 
     default:
       return state;
