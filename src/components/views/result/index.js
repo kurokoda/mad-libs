@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ResultView = (props) => {
   const { onButtonClick } = props;
@@ -29,6 +30,8 @@ const ResultView = (props) => {
   );
 };
 
-ResultView.propTypes = {};
+ResultView.propTypes = {
+  onButtonClick: PropTypes.func.isRequired
+};
 
 export default ResultView;
