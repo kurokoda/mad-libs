@@ -61,6 +61,7 @@ const App = (props) => {
       )}
       {isResultView && (
         <ResultView
+          fields={fields}
           fieldResults={fieldResults}
           onButtonClick={onNavButtonClick}
         />

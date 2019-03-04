@@ -12,7 +12,7 @@ export const UPDATE_FIELD_TEMPLATE = "MADLIBS.UPDATE_FIELD_TEMPLATE";
 export const INITIAL_STATE = {
   allFieldsComplete: false,
 
-  currentView: "result",
+  currentView: "input",
 
   fieldOrder: [
     FIELD_NAMES.hometown,

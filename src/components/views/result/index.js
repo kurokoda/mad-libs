@@ -2,26 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ResultView = (props) => {
-  const { onButtonClick } = props;
+  const { fields, fieldResults, onButtonClick } = props;
+
+  const getResults = () => {
+    return fields.map((field) => fieldResults[field]).join(" ");
+  };
 
   return (
     <div className="container">
       <div className="content">
         <div className="section section--centered section--gray">
           <div className="result-section">
-            <h3 className="section-label">About Me</h3>
-            <div className="result-text">
-              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
-              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
-              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
-              Foo fooberty foo foo monkeybutt
-            </div>
+            <h3 className="section-label">Your Essay Text</h3>
+            <div className="result-text">{getResults()}</div>
             <button
               className="nav-button"
               data-target-view="input"
               onClick={onButtonClick}
             >
-              Edit
+              Start Over
             </button>
           </div>
         </div>
@@ -31,6 +30,8 @@ const ResultView = (props) => {
 };
 
 ResultView.propTypes = {
+  fields: PropTypes.array.isRequired,
+  fieldResults: PropTypes.shape({}).isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
 
