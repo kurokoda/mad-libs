@@ -27,7 +27,6 @@ const InputView = (props) => {
               onBlur={onBlur}
             />
           ))}
-          {allFieldsComplete && <button>BUTTON</button>}
         </div>
         <div className="madlibs__section">
           <h3 className="madlibs__section-label">Your Essay Test</h3>
