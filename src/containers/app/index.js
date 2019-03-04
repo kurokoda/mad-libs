@@ -8,6 +8,7 @@ function mapStateToProps({
   currentView,
   fieldOrder,
   fieldResults,
+  resetApplication,
   updateFieldTemplate,
   updateCurrentView,
 }) {
@@ -16,6 +17,8 @@ function mapStateToProps({
     currentView,
     fieldOrder,
     fieldResults,
+    resetApplication,
+    resetApplication,
     updateFieldTemplate,
     updateCurrentView,
   };
@@ -23,6 +26,7 @@ function mapStateToProps({
 
 function mapDispatchToProps(dispatch) {
   return {
+    resetApplication: () => dispatch(actions.resetApplication()),
     updateFieldTemplate: (payload) =>
       dispatch(actions.updateFieldTemplate(payload)),
     updateCurrentView: (payload) =>

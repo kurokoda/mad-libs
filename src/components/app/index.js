@@ -11,6 +11,7 @@ const App = (props) => {
     currentView,
     fieldOrder,
     fieldResults,
+    resetApplication,
     updateFieldTemplate,
     updateCurrentView,
   } = props;
@@ -42,9 +43,14 @@ const App = (props) => {
     updateFieldTemplate({ field, result });
   };
 
-  const onNavButtonClick = (event) => {
+  const onInputNavButtonClick = (event) => {
     const { targetView } = event.target.dataset;
-    console.log(event.target.dataset.targetView);
+    updateCurrentView({ targetView });
+  };
+
+  const onResultNavButtonClick = (event) => {
+    const { targetView } = event.target.dataset;
+    resetApplication();
     updateCurrentView({ targetView });
   };
 
@@ -56,14 +62,14 @@ const App = (props) => {
           fields={fields}
           fieldResults={fieldResults}
           onBlur={onBlur}
-          onButtonClick={onNavButtonClick}
+          onButtonClick={onInputNavButtonClick}
         />
       )}
       {isResultView && (
         <ResultView
           fields={fields}
           fieldResults={fieldResults}
-          onButtonClick={onNavButtonClick}
+          onButtonClick={onResultNavButtonClick}
         />
       )}
     </div>
@@ -75,6 +81,7 @@ App.propTypes = {
   currentView: PropTypes.string.isRequired,
   fieldOrder: PropTypes.array.isRequired,
   fieldResults: PropTypes.shape({}).isRequired,
+  resetApplication: PropTypes.func.isRequired,
   updateFieldTemplate: PropTypes.func.isRequired,
   updateCurrentView: PropTypes.func.isRequired,
 };

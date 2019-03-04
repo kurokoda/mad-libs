@@ -14,9 +14,11 @@ const ResultView = (props) => {
         <div className="section section--centered section--gray">
           <div className="result-section">
             <h3 className="section-label">Your Essay Text</h3>
+            <div className="result-text-container">
             <div className="result-text">{getResults()}</div>
+            </div>
             <button
-              className="nav-button"
+              className="button--nav"
               data-target-view="input"
               onClick={onButtonClick}
             >

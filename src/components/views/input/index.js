@@ -36,10 +36,10 @@ const InputView = (props) => {
         </div>
         <div className="section">
           <h3 className="section-label">Your Essay Test</h3>
-          <div className="results">{getResults()}</div>
+          <div className="result-text">{getResults()}</div>
           {allFieldsComplete && (
             <button
-              className="nav-button"
+              className="button--nav"
               data-target-view="result"
               onClick={onButtonClick}
             >

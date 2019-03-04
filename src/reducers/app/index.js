@@ -3,6 +3,7 @@ import { FIELD_NAMES } from "../../constants";
 // Action types
 // ----------------------------------------------------------------------------
 
+export const RESET_APPLICATION = "MADLIBS.RESET_APPLICATION";
 export const UPDATE_CURRENT_VIEW = "MADLIBS.UPDATE_CURRENT_VIEW";
 export const UPDATE_FIELD_TEMPLATE = "MADLIBS.UPDATE_FIELD_TEMPLATE";
 
@@ -38,6 +39,9 @@ export const INITIAL_STATE = {
 
 export function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case RESET_APPLICATION:
+      return INITIAL_STATE;
+
     case UPDATE_CURRENT_VIEW:
       return {
         ...state,
@@ -64,6 +68,10 @@ export function reducer(state = INITIAL_STATE, action) {
 // ----------------------------------------------------------------------------
 
 export const actions = {
+  resetApplication() {
+    return { type: RESET_APPLICATION };
+  },
+
   updateCurrentView(payload) {
     return { type: UPDATE_CURRENT_VIEW, payload };
   },
