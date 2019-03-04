@@ -2,14 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./index.scss";
 import InputView from "../views/input";
+import ResultView from "../views/result";
+
 import { getTextTemplate } from "../../constants";
 
 const App = (props) => {
   const {
     allFieldsComplete,
+    currentView,
     fieldOrder,
     fieldResults,
     updateFieldTemplate,
+    updateCurrentView
   } = props;
   const fields = fieldOrder;
 
@@ -25,6 +29,10 @@ const App = (props) => {
     return template.replace("$answer", value);
   };
 
+  const isInputView = currentView === "input";
+
+  const isResultView = currentView === "result";
+
   const onBlur = (event) => {
     const field = event.target.dataset.field;
     const value = event.target.value;
@@ -32,14 +40,29 @@ const App = (props) => {
     updateFieldTemplate({ field, result });
   };
 
+  const onNavButtonClick = (event) => {
+    const { targetView } = event.target.dataset;
+    console.log(event.target.dataset.targetView);
+    updateCurrentView({targetView});
+  }
+
   return (
     <div className="application__container">
-      <InputView
-        allFieldsComplete={allFieldsComplete}
-        fields={fields}
-        fieldResults={fieldResults}
-        onBlur={onBlur}
-      />
+      { isInputView && (
+          <InputView
+              allFieldsComplete={allFieldsComplete}
+              fields={fields}
+              fieldResults={fieldResults}
+              onBlur={onBlur}
+              onButtonClick={onNavButtonClick}
+          />
+      )}
+      { isResultView && (
+          <ResultView
+              fieldResults={fieldResults}
+              onButtonClick={onNavButtonClick}
+          />
+      )}
     </div>
   );
 };

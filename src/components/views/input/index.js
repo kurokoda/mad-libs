@@ -4,7 +4,7 @@ import "./index.scss";
 import InputField from "./inputField";
 
 const InputView = (props) => {
-  const { allFieldsComplete, fields, fieldResults, onBlur } = props;
+  const { allFieldsComplete, fields, fieldResults, onBlur, onButtonClick } = props;
 
   const getCopy = (index) => {
     return COPY[fields[index]];
@@ -34,7 +34,7 @@ const InputView = (props) => {
           {getResults()}
           </div>
           {allFieldsComplete && (
-            <button className="madlibs__button">Edit</button>
+              <button className="madlibs__button" data-target-view="result" onClick={onButtonClick}>Edit</button>
           )}
         </div>
       </div>

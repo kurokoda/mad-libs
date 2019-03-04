@@ -1,0 +1,44 @@
+.madlibs__button {
+  background-color: #63d791;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  height: 50px;
+  width: 140px
+}
+
+.madlibs__container {
+  background-color: #20489e;
+  border-radius: 4px;
+  display: flex;
+  margin: 40px;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.madlibs__content {
+  display: flex;
+  width: 100%;
+}
+
+.madlibs__results {
+  color: #999;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.madlibs__section {
+  background-color: #fff;
+  padding: 40px;
+  width: 100%;
+}
+
+.madlibs__section--gray {
+  background-color: #f3f5f9;
+}
+
+.madlibs__section-label {
+  color: #666;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}

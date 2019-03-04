@@ -3,13 +3,18 @@ import { FIELD_NAMES } from "../../constants";
 // Action types
 // ----------------------------------------------------------------------------
 
-export const INCREMENT_COUNTER = "MADLIBS.INCREMENT_COUNTER";
+export const UPDATE_CURRENT_VIEW = "MADLIBS.UPDATE_CURRENT_VIEW";
 export const UPDATE_FIELD_TEMPLATE = "MADLIBS.UPDATE_FIELD_TEMPLATE";
 
 // Initial state
 // ----------------------------------------------------------------------------
 
 export const INITIAL_STATE = {
+
+  allFieldsComplete: false,
+
+  currentView: "result",
+
   fieldOrder: [
     FIELD_NAMES.hometown,
     FIELD_NAMES.favoriteFood,
@@ -26,9 +31,7 @@ export const INITIAL_STATE = {
     [FIELD_NAMES.music]: null,
     [FIELD_NAMES.messageIf]: null,
     [FIELD_NAMES.bar]: null,
-  },
-
-  allFieldsComplete: false,
+  }
 };
 
 // Reducer
@@ -36,10 +39,10 @@ export const INITIAL_STATE = {
 
 export function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case INCREMENT_COUNTER:
+    case UPDATE_CURRENT_VIEW:
       return {
         ...state,
-        counter: state.counter + 1,
+        currentView: action.payload.targetView
       };
 
     case UPDATE_FIELD_TEMPLATE:
@@ -62,8 +65,8 @@ export function reducer(state = INITIAL_STATE, action) {
 // ----------------------------------------------------------------------------
 
 export const actions = {
-  increment() {
-    return { type: INCREMENT_COUNTER };
+  updateCurrentView(payload) {
+    return { type: UPDATE_CURRENT_VIEW, payload };
   },
 
   updateFieldTemplate(payload) {
