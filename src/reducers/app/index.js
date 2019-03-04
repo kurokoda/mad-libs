@@ -10,7 +10,6 @@ export const UPDATE_FIELD_TEMPLATE = "MADLIBS.UPDATE_FIELD_TEMPLATE";
 // ----------------------------------------------------------------------------
 
 export const INITIAL_STATE = {
-
   allFieldsComplete: false,
 
   currentView: "result",
@@ -31,7 +30,7 @@ export const INITIAL_STATE = {
     [FIELD_NAMES.music]: null,
     [FIELD_NAMES.messageIf]: null,
     [FIELD_NAMES.bar]: null,
-  }
+  },
 };
 
 // Reducer
@@ -42,7 +41,7 @@ export function reducer(state = INITIAL_STATE, action) {
     case UPDATE_CURRENT_VIEW:
       return {
         ...state,
-        currentView: action.payload.targetView
+        currentView: action.payload.targetView,
       };
 
     case UPDATE_FIELD_TEMPLATE:

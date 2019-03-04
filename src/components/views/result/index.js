@@ -10,9 +10,18 @@ const ResultView = (props) => {
           <div className="result-section">
             <h3 className="section-label">About Me</h3>
             <div className="result-text">
-              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
+              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
+              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
+              Foo fooberty foo foo monkeybutt Foo fooberty foo foo monkeybutt
+              Foo fooberty foo foo monkeybutt
             </div>
-            <button className="nav-button" data-target-view="input" onClick={onButtonClick}>Edit</button>
+            <button
+              className="nav-button"
+              data-target-view="input"
+              onClick={onButtonClick}
+            >
+              Edit
+            </button>
           </div>
         </div>
       </div>

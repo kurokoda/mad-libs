@@ -3,7 +3,13 @@ import { COPY } from "../../../constants";
 import InputField from "./inputField";
 
 const InputView = (props) => {
-  const { allFieldsComplete, fields, fieldResults, onBlur, onButtonClick } = props;
+  const {
+    allFieldsComplete,
+    fields,
+    fieldResults,
+    onBlur,
+    onButtonClick,
+  } = props;
 
   const getCopy = (index) => {
     return COPY[fields[index]];
@@ -29,11 +35,15 @@ const InputView = (props) => {
         </div>
         <div className="section">
           <h3 className="section-label">Your Essay Test</h3>
-          <div className="results">
-          {getResults()}
-          </div>
+          <div className="results">{getResults()}</div>
           {allFieldsComplete && (
-              <button className="nav-button" data-target-view="result" onClick={onButtonClick}>Edit</button>
+            <button
+              className="nav-button"
+              data-target-view="result"
+              onClick={onButtonClick}
+            >
+              Edit
+            </button>
           )}
         </div>
       </div>

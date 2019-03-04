@@ -12,7 +12,7 @@ const App = (props) => {
     fieldOrder,
     fieldResults,
     updateFieldTemplate,
-    updateCurrentView
+    updateCurrentView,
   } = props;
   const fields = fieldOrder;
 
@@ -45,30 +45,37 @@ const App = (props) => {
   const onNavButtonClick = (event) => {
     const { targetView } = event.target.dataset;
     console.log(event.target.dataset.targetView);
-    updateCurrentView({targetView});
-  }
+    updateCurrentView({ targetView });
+  };
 
   return (
     <div className="application">
-      { isInputView && (
-          <InputView
-              allFieldsComplete={allFieldsComplete}
-              fields={fields}
-              fieldResults={fieldResults}
-              onBlur={onBlur}
-              onButtonClick={onNavButtonClick}
-          />
+      {isInputView && (
+        <InputView
+          allFieldsComplete={allFieldsComplete}
+          fields={fields}
+          fieldResults={fieldResults}
+          onBlur={onBlur}
+          onButtonClick={onNavButtonClick}
+        />
       )}
-      { isResultView && (
-          <ResultView
-              fieldResults={fieldResults}
-              onButtonClick={onNavButtonClick}
-          />
+      {isResultView && (
+        <ResultView
+          fieldResults={fieldResults}
+          onButtonClick={onNavButtonClick}
+        />
       )}
     </div>
   );
 };
 
-App.propTypes = {};
+App.propTypes = {
+  allFieldsComplete: PropTypes.bool.isRequired,
+  currentView: PropTypes.string.isRequired,
+  fieldOrder: PropTypes.array.isRequired,
+  fieldResults: PropTypes.shape({}).isRequired,
+  updateFieldTemplate: PropTypes.func.isRequired,
+  updateCurrentView: PropTypes.func.isRequired
+};
 
 export default App;
